@@ -1,0 +1,9 @@
+import com.ingenifi.chartifi.yuml.model.ClassType;
+import org.jboss.forge.roaster.model.JavaClass;
+
+rule "Insert ClassType"
+    when
+        $javaClass : JavaClass()
+    then
+        insert(new ClassType($javaClass.getName()));
+end
